@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试用-大众试用</title>
+    <!-- 引入公共样式 1 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- 引入公共样式 2 -->
+    <link rel="stylesheet" href="../css/common2.css">
+    <!-- 引入css -->
+    <link rel="stylesheet" href="../css/use.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <!-- 引入jquery -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="../js/template-web.js"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <!-- 登录窗口 -->
+    <div class="wrap" id="login_wrap">
+        <div class="login_">
+            <div class="close_" id="close_l">×</div>
+            <div class="login_left fl">
+                <h3>极果账号登录</h3>
+                <div><span></span><input type="text" placeholder="手机号"></div>
+                <div><span></span><input type="text" placeholder="密码"></div>
+                <div>
+                    <input type="checkbox">下次自动登录
+                    <button>登录</button>
+                </div>
+                <div>
+                    <span><a href="./regist.html">注册新账号</a></span>
+                    <span>忘记密码？</span>
+                </div>
+            </div>
+            <div class="l_line"></div>
+            <div class="login_right fr">
+                <p>社交网络账号登录</p>
+                <img src="../img/login_ewm.png" alt="">
+                <div>
+                    <span class="l_r_tubiao weibo"><span></span>微博</span>
+                    <div class="l_r_line"></div>
+                    <span class="l_r_tubiao qq"><span></span>QQ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 头部导航 -->
+    <div class="nav w">
+        <!-- logo -->
+        <div class="logo">
+            <img src="../img/logonew.png" alt="">
+        </div>
+
+        <!-- 导航条 -->
+        <div class="list">
+            <ul>
+                <li> <a href="../index.html">首页</a> </li>
+                <li> <a href="../play/play_new.html">酷玩</a> </li>
+                <li> <a href="../guid/guid_all.html">导购</a> </li>
+                <li> <a href="../use/use_public_all.html" class="change">试用</a> </li>
+                <li> <a href="../report/report_new.html">报告</a> </li>
+            </ul>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="search">
+            <img src="../img/search.png" alt="">
+        </div>
+        <!-- 登录 -->
+        <div class="login" id="login_">
+            <a href="javascript:;">
+                登录
+            </a>
+        </div>
+
+        <!-- 注册 -->
+        <div class="register">
+            <a href="../regist.html">注册</a>
+        </div>
+    </div>
+
+    <!-- 导购清单 -->
+    <h2 class="w">免费试用</h2>
+    <div class="lis">
+        <ul class="w">
+            <li class="current">
+                <a href="./use_public_all.html">大众试用</a>
+            </li>
+            <li>
+                <a href="./use_exper.html">体验师专享 </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <div class="xiaji_nav">
+        <ul id="xj_nav" w>
+            <li class="active_">全部</li>
+            <li>申请中</li>
+            <li>试用中</li>
+            <li>已结束</li>
+        </ul>
+    </div>
+
+    <div class="sy_wrap">
+        <div class="w">
+            <!-- 全部 -->
+            <ul id="sy_all_list" class="sy_list">
+                <!-- <li>
+                    <span class="hot_rt_biaoshi bs_sf">首发</span>
+                    <img src="../img/hot9.jpg" alt="">
+                    <h4>巴慕达 The Toaster 烤面包机</h4>
+                    <div>
+                        <span>2032</span>
+                        <span>20台</span>
+                    </div>
+                    <p><span>1392</span>申请</p>
+                    <span class="use_shop_type">剩余时间2天</span>
+                </li> -->
+            </ul>
+            <!-- 申请中 -->
+            <ul id="sy_sqz_list" class="sy_list"></ul>
+            <!-- 试用中 -->
+            <ul id="sy_syz_list" class="sy_list"></ul>
+            <!-- 已结束 -->
+            <ul id="sy_yjs_list" class="sy_list"></ul>
+        </div>
+
+        <div id="click_more"><span id="loading_icon"></span>点击加载更多</div>
+
+        <!-- 加载动画 -->
+        <div id="jiazai_donghua">
+            <i class="fa fa-spinner"></i>
+        </div>
+    </div>
+
+    <!-- 最底部信息部分 -->
+    <div class="footer">
+        <div class="ft_bx">
+            <div class="erweima"></div>
+            <div class="jiguo">
+                <img src="../img/logoImg.jpg" alt="">
+                <p>全球酷玩试用导购平台酷·新奇·好玩·品质</p>
+                <p>微信添加"JguoJguo"获取我们的服务。</p>
+            </div>
+            <p class="banquan">&copy; 2016极果版权所有</p>
+        </div>
+        <dl>
+            <dt><a href="./help.html">免费试用</a></dt>
+            <dd>试用流程</dd>
+            <dd>如何提高成功率</dd>
+        </dl>
+        <dl>
+            <dt>友情链接</dt>
+            <dd>智东西</dd>
+            <dd>WEIBUSI</dd>
+            <dd>搜狐IT</dd>
+            <dd>腾讯科技</dd>
+            <dd>搜狐数码</dd>
+            <dd>凤凰科技</dd>
+            <dd>凤凰数码</dd>
+            <dd>PConline</dd>
+            <dd>泡泡网</dd>
+            <dd>3W咖啡</dd>
+            <dd>ZUK社区</dd>
+            <dd>亿觅emie</dd>
+            <dd>极客公园</dd>
+            <dd>易迅易启玩</dd>
+            <dd>果库</dd>
+        </dl>
+        <dl>
+            <dt>购买攻略</dt>
+            <dd>美亚海淘教程</dd>
+            <dd>日亚海淘教程</dd>
+            <dd>海淘转运攻略</dd>
+            <dd>kickstarter 众筹购买攻略</dd>
+            <dd>indiegogo 众筹购买攻略</dd>
+        </dl>
+        <dl>
+            <dt><a href="./about.html">厂商合作</a></dt>
+            <dd>关于极果</dd>
+            <dd>联系我们</dd>
+            <dd>商务合作：BD@jiguo.com</dd>
+            <dd>CEO邮箱：CEO@jiguo.com</dd>
+        </dl>
+    </div>
+
+
+
+</body>
+
+<script id="one" type="text/html">
+    {{each value}}
+    <li>
+        <span class="sy_tys">{{$value.info_ty}}</span>
+        <a href="./use_info.html"><img src="{{$value.img}}" alt=""></a>
+        <h4>{{$value.text}}</h4>
+        <div>
+            <span class="use_span">{{$value.totalnum}}</span>
+            <span class="use_span">{{$value.num}}台</span>
+        </div>
+        <p><span>{{$value.apply}}</span>申请</p>
+        <span class="use_shop_type">{{$value.leixing}}</span>
+    </li>
+    {{/each}}
+</script>
+
+
+<script>
+    var oajax = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    oajax.open('get', '../json/use_public.json', true);
+    oajax.send();
+    oajax.onreadystatechange = function () {
+        // console.log(oajax.readyState);
+        if (oajax.readyState == 4) {
+            if (oajax.status == 200) {
+                var res = JSON.parse(oajax.responseText);
+                // console.log(res);
+                render_html(res);
+            } else {
+                console.log('获取失败');
+            }
+        }
+    }
+
+    function render_html(res) {
+        // console.log(res);
+
+        var html1 = template('one', {
+            value: res[0]
+        });
+        var html2 = template('one', {
+            value: res[1]
+        });
+        var html3 = template('one', {
+            value: res[2]
+        });
+        var html4 = template('one', {
+            value: res[3]
+        });
+        document.getElementById('sy_all_list').innerHTML = html1;
+        document.getElementById('sy_sqz_list').innerHTML = html2;
+        document.getElementById('sy_syz_list').innerHTML = html3;
+        document.getElementById('sy_yjs_list').innerHTML = html4;
+    }
+</script>
+
+<script src="../js/use.js"></script>
+
+<script>
+    window.onload = function () {
+        var sy_list = document.getElementsByClassName('sy_list')[0];
+        // console.log(sy_list);
+        var lis = sy_list.getElementsByTagName('li');
+        for (var i = 0; i < lis.length; i++) {
+            (function (i) {
+                var use_shop_type = lis[i].getElementsByClassName('use_shop_type')[0];
+                var use_span = lis[i].getElementsByClassName('use_span')[0];
+                // console.log(use_shop_type);
+                var use_ = use_shop_type.innerHTML;
+                // console.log(use_);
+                if (use_.indexOf('报告') != -1) {
+                    lis[i].getElementsByClassName('use_shop_type')[0].style.color = '#c9c9c9';
+                    lis[i].getElementsByClassName('use_span')[0].style.color = '#c9c9c9';
+                    lis[i].getElementsByClassName('use_span')[0].style.borderColor = '#c9c9c9';
+                    lis[i].getElementsByClassName('use_span')[1].style.color = '#c9c9c9';
+                    lis[i].getElementsByClassName('use_span')[1].style.borderColor = '#c9c9c9';
+                }
+                if (use_.indexOf('试用') != -1) {
+                    lis[i].getElementsByClassName('use_shop_type')[0].style.color = '#6fc071';
+                    lis[i].getElementsByClassName('use_span')[0].style.color = '#6fc071';
+                    lis[i].getElementsByClassName('use_span')[0].style.borderColor = '#6fc071';
+                    lis[i].getElementsByClassName('use_span')[1].style.color = '#6fc071';
+                    lis[i].getElementsByClassName('use_span')[1].style.borderColor = '#6fc071';
+                }
+            })(i)
+        }
+
+        var sy_wrap = document.getElementsByClassName('sy_wrap')[0];
+        var lis_ = sy_wrap.getElementsByTagName('li');
+        // console.log(lis_);
+        for (var j = 0; j < lis_.length; j++) {
+            (function (j) {
+                var sy_tys = lis_[j].getElementsByClassName('sy_tys')[0];
+                // console.log(sy_tys);
+                var tys_ = sy_tys.innerHTML;
+                // console.log(tys_);
+                if (tys_.indexOf('体验师') != -1) {
+                    lis_[j].getElementsByClassName('sy_tys')[0].style.color = '#aaa176';
+                    lis_[j].getElementsByClassName('sy_tys')[0].style.background =
+                        'radial-gradient(#faf6c7,#f7e7b4)';
+                }
+            })(j)
+        }
+
+    }
+</script>
+
+<!-- 引入登录js -->
+<script src="../js/login.js"></script>
+
+
+
+</html>

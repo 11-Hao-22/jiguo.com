@@ -1,0 +1,61 @@
+.about_ {
+    width: 1000px;
+    margin: 25px auto;
+    overflow: hidden;
+}
+
+.left {
+    width: 220px;
+    height: 220px;
+    float: left;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+
+.h3_1 {
+    color: rgb(53, 52, 52);
+    margin-left: 10px;
+}
+
+h4 {
+    color: rgb(53, 52, 52);
+    margin-top: 20px;
+}
+
+h4:nth-child(1) {
+    margin-top: 10px;
+}
+
+.one {
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.one>a {
+    display: block;
+    text-decoration: none;
+    color: rgb(53, 52, 52);
+    margin-left: 10px;
+}
+
+.right1 {
+    width: 640px;
+    float: right;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.two>a {
+    display: block;
+    text-decoration: none;
+    color: rgb(98, 88, 88);
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+h3 {
+    margin: 20px 0;
+}

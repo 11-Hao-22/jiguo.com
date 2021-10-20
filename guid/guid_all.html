@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入共同样式 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/common2.css">
+    <!-- 引入模板引擎 -->
+    <script src="../js/template-web.js"></script>
+    <!-- 引入jquery -->
+    <script src="../js/jquery.min.js"></script>
+
+    <style>
+        .lis ul li:first-child {
+            margin-left: 320px;
+        }
+
+        .item .page a {
+            position: relative;
+            display: block;
+            width: 223px;
+            height: 250px;
+            color: #000000;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 0 0 0.5px #000000;
+        }
+
+        .item .page img {
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .item .page p {
+            padding-top: 10px;
+            padding-left: 4px;
+        }
+
+        .item .page a em:nth-of-type(1) {
+            position: absolute;
+            bottom: 18px;
+            right: 12px;
+            padding-left: 10px;
+            margin-top: 30px;
+
+        }
+
+        .item .page a em:nth-of-type(1)::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 3px;
+            background: url(../img/reply.png);
+        }
+
+
+        .item .page a em:nth-of-type(2) {
+            position: absolute;
+            bottom: 18px;
+            right: 50px;
+        }
+
+        .item .page a em:nth-of-type(2)::before {
+            content: "";
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 3px;
+            background: url(../img/xin.png);
+        }
+    </style>
+
+</head>
+
+<body>
+
+      <!-- 登录窗口 -->
+      <div class="wrap" id="login_wrap">
+        <div class="login_">
+            <div class="close_" id="close_l">×</div>
+            <div class="login_left fl">
+                <h3>极果账号登录</h3>
+                <div><span></span><input type="text" placeholder="手机号"></div>
+                <div><span></span><input type="text" placeholder="密码"></div>
+                <div>
+                    <input type="checkbox">下次自动登录
+                    <button>登录</button>
+                </div>
+                <div>
+                    <span><a href="./regist.html">注册新账号</a></span>
+                    <span>忘记密码？</span>
+                </div>
+            </div>
+            <div class="l_line"></div>
+            <div class="login_right fr">
+                <p>社交网络账号登录</p>
+                <img src="../img/login_ewm.png" alt="">
+                <div>
+                    <span class="l_r_tubiao weibo"><span></span>微博</span>
+                    <div class="l_r_line"></div>
+                    <span class="l_r_tubiao qq"><span></span>QQ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 头部导航 -->
+    <div class="nav w">
+        <!-- logo -->
+        <div class="logo">
+            <img src="../img/logonew.png" alt="">
+        </div>
+
+        <!-- 导航条 -->
+        <div class="list">
+            <ul>
+                <li> <a href="../index.html">首页</a> </li>
+                <li> <a href="../play/play_new.html">酷玩</a> </li>
+                <li> <a href="./guid_all.html" class="change">导购</a> </li>
+                <li> <a href="../use/use_public_all.html">试用</a> </li>
+                <li> <a href="../report/report_new.html">报告</a> </li>
+            </ul>
+        </div>
+
+        <!-- 搜索 -->
+        <div class="search">
+            <img src="../img/search.png" alt="">
+        </div>
+
+        <!-- 登录 -->
+        <div class="login" id="login_">
+            <a href="javascript:;">
+                登录
+            </a>
+        </div>
+
+        <!-- 注册 -->
+        <div class="register">
+            <a href="../regist.html">注册</a>
+        </div>
+    </div>
+
+    <!-- 导购清单 -->
+    <h2 class="w">导购清单</h2>
+    <div class="lis">
+        <ul class="w">
+            <li class="current">
+                <a href="#">最新</a>
+            </li>
+            <li>
+                <a href="#">最热 </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="item">
+
+        <div class="page w">
+            <!-- 样式模板 -->
+            <!-- <a href="">
+                <img src="../img/hot9.jpg" alt="">
+                <p>SCIO 微型光谱仪</p>
+                <em>3</em>
+                <em>4</em>
+            </a> -->
+
+        </div>
+
+   
+        <!-- art-temlate渲染 new,hot -->
+        <script id="art" type="text/html">
+            <% for(var i = 0; i < value.length; i++){ %>
+            <a href="./guid_list.html" class="guid_out">
+                    <img src="<%= value[i].img %>" alt="">
+                    <p><%= value[i].text %></p>
+                    <em><%= value[i].like %></em>
+                    <em><%= value[i].words %></em>
+            </a>
+            <% } %>
+        </script>
+
+
+
+        <!-- 加载部分 -->
+        <div class="jiazai">
+            <span class="more"></span>
+            <p class="more_">点击加载更多</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(function () {
+            $('.page').hide()
+            $('.page').eq(0).show();
+            $('.lis li').click(function () {
+                // alert('111')
+                $(this).addClass("current").siblings().removeClass("current");
+                // 2.点击的同时，得到当前li 的索引号
+                var index = $(this).index();
+                // console.log(index);
+
+                // 3.让下部里面相应索引号的item显示，其余的item隐藏
+                $(".item .page").eq(index).show().siblings(".page").hide();
+            })
+
+            $('.jiazai p').click(function () {
+                $(this).siblings('.more').css("background-image", "url(../img/loading-icon.gif)");
+            })
+        })
+    </script>
+
+    <!-- 最底部信息部分 -->
+    <div class="footer">
+        <div class="ft_bx">
+            <div class="erweima"></div>
+            <div class="jiguo">
+                <img src="../img/logoImg.jpg" alt="">
+                <p>全球酷玩试用导购平台酷·新奇·好玩·品质</p>
+                <p>微信添加"JguoJguo"获取我们的服务。</p>
+            </div>
+            <p class="banquan">&copy; 2016极果版权所有</p>
+        </div>
+        <dl>
+            <dt><a href="./help.html">免费试用</a></dt>
+            <dd>试用流程</dd>
+            <dd>如何提高成功率</dd>
+        </dl>
+        <dl>
+            <dt>友情链接</dt>
+            <dd>智东西</dd>
+            <dd>WEIBUSI</dd>
+            <dd>搜狐IT</dd>
+            <dd>腾讯科技</dd>
+            <dd>搜狐数码</dd>
+            <dd>凤凰科技</dd>
+            <dd>凤凰数码</dd>
+            <dd>PConline</dd>
+            <dd>泡泡网</dd>
+            <dd>3W咖啡</dd>
+            <dd>ZUK社区</dd>
+            <dd>亿觅emie</dd>
+            <dd>极客公园</dd>
+            <dd>易迅易启玩</dd>
+            <dd>果库</dd>
+        </dl>
+        <dl>
+            <dt>购买攻略</dt>
+            <dd>美亚海淘教程</dd>
+            <dd>日亚海淘教程</dd>
+            <dd>海淘转运攻略</dd>
+            <dd>kickstarter 众筹购买攻略</dd>
+            <dd>indiegogo 众筹购买攻略</dd>
+        </dl>
+        <dl>
+            <dt><a href="./about.html">厂商合作</a></dt>
+            <dd>关于极果</dd>
+            <dd>联系我们</dd>
+            <dd>商务合作：BD@jiguo.com</dd>
+            <dd>CEO邮箱：CEO@jiguo.com</dd>
+        </dl>
+    </div>
+
+    <!-- 引入guid.js -->
+    <script src="../js/guid.js"></script>
+    <!-- 引入登录js -->
+    <script src="../js/login.js"></script>
+
+
+</body>
+
+</html>

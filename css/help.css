@@ -1,0 +1,54 @@
+.help {
+    width: 1000px;
+    margin: 25px auto;
+    overflow: hidden;
+}
+
+.help .h_left {
+    width: 220px;
+    height: 220px;
+    float: left;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.help .h3_1 {
+    margin-left: 10px;
+}
+
+.help h4 {
+    margin-top: 20px;
+}
+
+.help h4:nth-child(1) {
+    margin-top: 10px;
+}
+
+.help .one {
+    margin-left: 10px;
+    line-height: 25px;
+}
+
+.help .one>a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+.help .right1 {
+    width: 640px;
+    float: right;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.help .two>a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    margin: 20px 0;
+    font-weight: 700;
+}
